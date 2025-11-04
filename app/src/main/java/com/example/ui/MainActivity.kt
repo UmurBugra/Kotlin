@@ -9,7 +9,6 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        supportActionBar?.hide()
         setContentView(R.layout.layout)
 
         val recyclerView = findViewById<RecyclerView>(R.id.recycler_view)
