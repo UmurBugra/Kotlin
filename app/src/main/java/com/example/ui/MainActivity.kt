@@ -1,9 +1,9 @@
 package com.example.ui
 
 import android.os.Bundle
+import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
+import com.example.ui.ui.theme.VakaListFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -11,15 +11,16 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.layout)
 
-        val recyclerView = findViewById<RecyclerView>(R.id.recycler_view)
+        // "Vakalar" butonunu
+        val btnVakalar = findViewById<Button>(R.id.nav_vakalar)
 
-        val vakalar = listOf(
-            Vaka(1, "Apandisit", "Akut karın ağrısı vakası"),
-            Vaka(2, "Kırık", "Sağ kol kırığı"),
-            Vaka(3, "Grip", "Yüksek ateş ve öksürük")
-        )
-
-        recyclerView.layoutManager = LinearLayoutManager(this)
-        recyclerView.adapter = VakalarAdapter(vakalar)
+        // Butona tıklandığında Fragment'ı yükle
+        btnVakalar.setOnClickListener {
+            supportFragmentManager.beginTransaction()  // fragment işlemi başlatıyor
+                // fragment_container içine VakaListFragment'ı yerleştiriyor
+                .replace(R.id.fragment_container, VakaListFragment())
+                .addToBackStack(null)  // Geri tuşu ile dönebilmek için
+                .commit()
+        }
     }
 }
