@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!-- Top Bar - ConstraintLayout ile -->
+    <!-- Top Bar -->
 
     <View
         android:id="@+id/top_bar_background"
