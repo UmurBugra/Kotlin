@@ -23,3 +23,5 @@ class MainActivity : AppCompatActivity() {
         recyclerView.adapter = VakalarAdapter(vakalar)
     }
 }
+
+// yuuunis242
